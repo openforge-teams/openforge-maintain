@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  openforge-maintain:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: openforge-maintain
+    restart: always
+    ports:
+      - "9999:9999"   # Core API + Frontend
+      - "10000:10000" # Agent API
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock  # Docker socket
+      - openforge-maintain-data:/opt/openforge-maintain/data            # 持久化数据
+      - openforge-maintain-logs:/var/log/openforge-maintain             # 日志
+    environment:
+      - MAINTAIN_PORT=9999
+      - AGENT_PORT=10000
+      - MAINTAIN_SECRET=change-me-in-production
+      - MAINTAIN_SECURITY_ENTRY=default
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - GIN_MODE=release
+
+volumes:
+  openforge-maintain-data:
+    driver: local
+  openforge-maintain-logs:
+    driver: local

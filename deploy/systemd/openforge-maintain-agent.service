@@ -1,0 +1,29 @@
+[Unit]
+Description=openforge-maintain Agent Service
+Documentation=https://github.com/openforge-maintain/openforge-maintain
+After=network.target docker.socket
+Wants=docker.socket
+Requires=openforge-maintain-core.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/opt/openforge-maintain
+ExecStart=/opt/openforge-maintain/bin/agent
+Restart=always
+RestartSec=5
+LimitNOFILE=65535
+
+# Environment
+Environment=AGENT_PORT=10000
+Environment=AGENT_DB_PATH=/opt/openforge-maintain/data/agent.db
+Environment=DOCKER_HOST=unix:///var/run/docker.sock
+Environment=GIN_MODE=release
+
+# Security
+NoNewPrivileges=false
+ProtectSystem=false
+
+[Install]
+WantedBy=multi-user.target
