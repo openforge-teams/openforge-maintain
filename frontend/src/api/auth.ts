@@ -18,7 +18,7 @@ export interface ChangePasswordParams {
 }
 
 export function login(data: LoginParams) {
-  return post<{ token: string; refresh_token: string }>('/api/v2/core/auth/login', data)
+  return post<{ access_token: string; refresh_token: string }>('/api/v2/core/auth/login', data)
 }
 
 export function logout() {

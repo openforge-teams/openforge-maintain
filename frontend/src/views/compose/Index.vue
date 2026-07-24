@@ -12,7 +12,7 @@
           <template v-if="column.key === 'actions'">
             <a-space>
               <a-button type="link" size="small" @click="handleUp(record)">{{ t('compose.start') }}</a-button>
-              <a-popconfirm :title="Confirm?" @confirm="handleDown(record)">
+              <a-popconfirm :title="t('compose.confirm')" @confirm="handleDown(record)">
                 <a-button type="link" size="small" danger>{{ t('compose.down') }}</a-button>
               </a-popconfirm>
             </a-space>

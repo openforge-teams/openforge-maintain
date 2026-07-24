@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/screenshots/dashboard.jpg" alt="openforge-maintain Dashboard" width="800"/>
+<img src="docs/screenshots/dashboard.png" alt="openforge-maintain Dashboard" width="800"/>
 
 <h1>openforge-maintain</h1>
 
@@ -129,18 +129,20 @@ Repository (data access, interface-driven)
 
 <table>
   <tr>
-    <td><img src="docs/screenshots/dashboard.jpg" alt="Dashboard" width="400"/></td>
-    <td><img src="docs/screenshots/containers.jpg" alt="Containers" width="400"/></td>
+    <td><img src="docs/screenshots/login.png" alt="Login" width="400"/></td>
+    <td><img src="docs/screenshots/dashboard.png" alt="Dashboard" width="400"/></td>
   </tr>
   <tr>
+    <td align="center">Login — Secure Authentication</td>
     <td align="center">Dashboard — Real-time System Monitoring</td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/containers.png" alt="Containers" width="400"/></td>
+    <td><img src="docs/screenshots/terminal.png" alt="Web Terminal" width="400"/></td>
+  </tr>
+  <tr>
     <td align="center">Container Management — Lifecycle Operations</td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center"><img src="docs/screenshots/terminal.jpg" alt="Web Terminal" width="600"/></td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center">Web Terminal — Browser-based Shell Access</td>
+    <td align="center">Web Terminal — Browser-based Shell Access</td>
   </tr>
 </table>
 

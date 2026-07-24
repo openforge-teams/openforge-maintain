@@ -11,8 +11,8 @@ export const useUserStore = defineStore('user', () => {
 
   async function login(username: string, password: string, totp_code?: string) {
     const res = await loginApi({ username, password, totp_code })
-    token.value = res.data.token
-    localStorage.setItem('token', res.data.token)
+    token.value = res.data.access_token
+    localStorage.setItem('token', res.data.access_token)
     if (res.data.refresh_token) {
       localStorage.setItem('refresh_token', res.data.refresh_token)
     }
