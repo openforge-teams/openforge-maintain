@@ -92,15 +92,15 @@ async function fetchData() {
       cpuChart.setOption({ xAxis: { data: cpu.data.history.map(h => h.time) }, series: [{ data: cpu.data.history.map(h => h.value) }] })
     }
     if (memChart && mem.data.history?.length) {
-      memChart.setOption({ xAxis: { data: mem.data.history.map(h => h.time) }, series: [{ data: mem.data.history.map(h => (h.value / mem.data.total) * 100) }] })
+      memChart.setOption({ xAxis: { data: mem.data.history.map(h => h.time) }, series: [{ data: mem.data.history.map(h => h.value) }] })
     }
   } catch { /* ignore */ }
 }
 
 onMounted(async () => {
-  await fetchData()
   if (cpuChartRef.value) cpuChart = createLineChart(cpuChartRef.value, t('dashboard.cpuUsage'), '#1890ff')
   if (memChartRef.value) memChart = createLineChart(memChartRef.value, t('dashboard.memUsage'), '#52c41a')
+  await fetchData()
   timer = setInterval(fetchData, 5000)
 })
 

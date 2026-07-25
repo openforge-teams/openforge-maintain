@@ -17,11 +17,11 @@ export default defineConfig({
         changeOrigin: true,
       },
       '/api/v2': {
-        target: 'http://localhost:10000',
+        target: 'http://localhost:9999',
         changeOrigin: true,
       },
       '/ws': {
-        target: 'ws://localhost:10000',
+        target: 'ws://localhost:9999',
         ws: true,
         changeOrigin: true,
       },
